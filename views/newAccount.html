@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta http-equiv="refresh" content="4" > -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../libs/fontawesome.css">
+  <link rel="stylesheet" href='../css/index.css'>
+  <link rel="stylesheet" href="../libs/bootstrap.min.css">
+  <script src="../libs/popper.min.js"></script>
+  <script src="../libs/clipboard.min.js"></script>
+  <script src="../libs/jquery.js"></script>
+  <script src="../libs/bootstrap.min.js"></script>
+  <script src="../libs/bohr.js"></script>
+  <!-- <script src="../libs/buffer.min.js"></script> -->
+
+  <title>BoHrWeb</title>
+</head>
+<body>
+  <div class='main'>
+    <!-- ================= PUG Head =================== -->
+    <div class='app-header'>
+      <div class='logo goToHomePage'>
+        <strong>BoHrWeb</strong>
+      </div>
+      <img src='../img/icons/cross.png' class='goToHomePage' width='25px'/>
+    </div>
+    <!-- ============================================== -->
+    <div class='app-body'>
+      <div class='new-account'>
+        <!-- standart for all h3 header on any page -->
+        <div class='tabs customTabs'>
+          <ul class="nav nav-tabs" role="tablist">
+            <li  class="nav-item">
+              <a class="nav-link active"  data-toggle="tab" href="#create-tab" role="tab" aria-controls="create-tab" aria-selected="true">Create</a>
+            </li>
+            <li  class="nav-item">
+              <a class="nav-link"  data-toggle="tab" href="#import-tab" role="tab" aria-controls="import-tab" aria-selected="false">Import</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <!-- crate new wallet -->
+            <div class="tab-pane fade show active" id="create-tab" role="tabpanel" aria-labelledby="create-tab">
+              <div class='createWalletForm'>
+                <!-- placholder based on number of wallets -->
+                <input class='customInput' id='accountName' type='text' placeholder="Account Name" />
+                <button class="green-button" data-toggle="modal" data-target="#password-modal">Create Account</button>
+              </div>
+              <div class="modal fade modalPassword" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Create new account</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><img src="../img/icons/cross.png" width='20px' /></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Input a password to create a wallet :</p>
+                      <input type="password" class='passwordField customInput'>
+                    </div>
+                    <div class="modal-footer">
+                      <div class='buttons'>
+                        <button type="button" class="btn2" data-dismiss="modal">Cancel</button>
+                        <button class="btn green-button" id="createWallet">Create Wallet</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- import wallet -->
+            <div class="tab-pane fade importWallet" id="import-tab" role="tabpanel" aria-labelledby="import-tab">
+              <select class='form-control selectImportType'>
+                <option value='privateKey'>Private Key</option>
+              </select>
+              <!-- if private key -->
+              <div class='importKey'>
+                <input class='customInput' type='text' id='accountPrivatKey' placeholder="Private key 0x302..."/>
+								<input style='margin-top: 10px;' class = 'customInput' type = 'password' id = 'accountPass' placeholder="Input Password" />
+                <span class='error'></span>
+              </div>
+              <div class='importJson' style='display: none'>
+                <input type='file' id='file' accept=".json" />
+                <input class='customInput' type='password' id='accountPass' placeholder="Password for encrypted key" />
+                <span class='error'></span>
+              </div>
+              <button class ='green-button' id="importWallet">Import Account</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="../js/client.js"></script>
+  <script src="../js/bundle.js"></script>
+</body>
+</html>

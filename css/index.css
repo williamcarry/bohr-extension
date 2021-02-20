@@ -1,0 +1,749 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-style: Roboto;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  width: 360px;
+  height: 600px;
+  overflow-y: overlay;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+ul {
+  list-style: none;
+}
+
+.h3title {
+  font-size: 28px;
+  margin-bottom: 23px;
+  font-weight: 500;
+  line-height: 43px;
+  color: #ffff00;
+}
+
+.h3Headline {
+  padding: 8px 15px 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h3Headline h3 {
+  margin: 0;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.tooltip {
+  color: red;
+}
+
+.gray {
+  color: #808080;
+}
+
+.buttons {
+  margin-top: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.buttons button {
+  color: #000000;
+  width: 90px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: #FFFF00;
+}
+
+.buttons .btn2{
+  color: #FFFF00;
+  width: 90px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.23);
+}
+.buttons button:hover {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+button.btn-cancel {
+  /*background-color: #ccc;*/
+  /*border: 2px solid #666666;*/
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #FFFF00;
+}
+
+p.error, span.error, span.invalidAddress, span.invalidAmount {
+  display: block;
+  margin-top: 10px;
+  color: #F44336;
+}
+
+span.invalidAddress, span.invalidAmount {
+  margin-top: 17px;
+  font-size: 13px;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* ---------- End of Main Styles -------------- */
+
+/* Welcome page */
+
+.welcome-page {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.welcome-page .logo img {
+  width: 150px;
+}
+
+.welcome-button {
+  cursor: pointer;
+  margin-top: 50px;
+  padding: 15px 24px;
+  width: 256px;
+  max-width: 100%;
+  height: 50px;
+  background-color: #ffff00;
+  color: black !important;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30.5px;
+  word-wrap: break-word;
+  box-shadow: 0 17px 43px 0 rgba(0, 0, 0, 0.2);
+}
+
+button.welcome-button:focus {
+  outline: 0;
+}
+
+p.hint {
+  font-size: 12px;
+  color: #6f6f6f;
+}
+
+.app-header, .app-head, .app-body {
+  padding: 15px;
+}
+
+.app-header {
+  display: flex;
+  background: #363636;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header .logo strong {
+  font-weight: 400;
+  color: #ffff00;
+}
+
+.app-header .logo:hover {
+  cursor: pointer;
+}
+
+.app-header .mainMenu img.verticalmenu:hover {
+  cursor: pointer;
+}
+
+.app-header div.dropdown-menu {
+  position: fixed !important;
+  transform: none !important;
+  width: 300px;
+  top: 57px !important;
+  left: 50px !important;
+  border-radius: 4px;
+  background: #ccc;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 2px 2px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.app-header li.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+}
+
+.app-header li.menu-item:hover, .app-head li.menu-item:hover {
+  cursor: pointer;
+  background-color: #7a7a7a;
+}
+
+.app-header li.menu-item img {
+  margin-right: 8px;
+}
+
+.dropdown-menu.show {
+  padding: 0;
+}
+
+.app-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffff00;
+  background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  background: url('../img/bg.png');
+  background-size: cover;
+}
+
+.app-head .addressData {
+  font-size: 16px;
+  text-align: center;
+}
+
+.app-head .addressData p.hexAddress {
+  font-size: 14px;
+}
+.app-head .accountOptions, .app-head .accountMenu {
+  cursor: pointer;
+}
+.app-head #accountOptions {
+  display: none;
+}
+
+.app-head .dropdown-menu {
+  transform: none !important;
+  position: fixed !important;
+  top: 120px !important;
+  left: 150px !important;
+  z-index: 2000;
+  padding: 0;
+  border-radius: 4px;
+  background: #ccc;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 2px 2px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.app-head .dropdown-menu ul li {
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  height: 50px;
+  padding: 10px;
+}
+
+.app-head .dropdown-menu ul li img {
+  margin-right: 8px;
+}
+
+.app-body .bohrValue {
+  text-align: center;
+  font-size: 30px;
+}
+.app-body .bohrValue .circleBorder {
+  margin-top:13px;
+  margin-bottom: 13px;
+}
+.app-body .bohrValue img#circleLogo {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.bohrValue {
+  font-size: 1.75rem;
+}
+
+.bohrLocked {
+  font-size: 1.1rem;
+}
+
+
+
+.app-body .bohrValue .usdValue {
+  font-size: 18px;
+}
+
+.sendPage .senderUsdValue {
+  font-size: 15px;
+}
+
+.historyLabel {
+  padding-left: 15px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.app-footer {
+  height: 100px;
+  margin-top: 15px;
+}
+
+.txDataType {
+  flex-direction: column;
+}
+
+.transactionList .transactionItem {
+  padding: 9px 15px 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.txDataType {
+  float: left;
+}
+
+.transactionAmount {
+  float: right;
+}
+
+.tx-in {
+  color: #ffff00;
+  font-size: 18px;
+}
+
+.tx-out {
+  color: #fff;
+  font-size: 18px;
+}
+
+.tx-internal {
+  color: #ffc107;
+  font-size: 18px;
+}
+
+.transactionList .txElement .transactionExpand {
+  background: #fafbfc;
+  height: 100%;
+  padding: 9px 15px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.transactionExpand .transactionExpandHeader {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+}
+
+.transactionExpand .transactionExpandHeader img {
+  padding: 4px;
+  border-radius: 6px;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.transactionExpand .transactionExpandHeader img:hover {
+  cursor: pointer;
+}
+
+.transactionExpand .transactionExpandBody .tranasctionRow {
+  font-size: .85rem;
+  color: #5d5d5d;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  height: 35px;
+}
+
+
+
+
+.transactionList .transactionDate {
+  font-size: 13px;
+  color: #5e6064;
+}
+
+.transactionExpand {
+  display: none;
+  height: 100px;
+}
+
+.noTxs {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* newAccount unique styles */
+/* temp styles */
+.new-account .createWalletForm, .importWallet {
+  padding-top: 30px;
+}
+.new-account .createWalletForm p {
+  font-size: 17px;
+  line-height: 21px;
+  margin-bottom: 15px !important;
+}
+
+
+/* -------->  Fix to the main style ? */
+.new-account .buttons, .sendTxBlock .buttons, .confirmPage .buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.new-account .buttons button, .sendTxBlock .buttons button,
+.confirmPage .buttons button {
+  height: 50px;
+  width: 160px;
+}
+
+input.customInput{
+  padding: 0 20px;
+  font-size: 16px;
+  width:100%;
+  height: 55px;
+  border: 1px solid #d2d8dd;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+input {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+ul.nav.nav-tabs li {
+  text-align: center;
+  width: 50%;
+}
+
+ul.nav.nav-tabs li a {
+  background-color: rgba(255, 255, 255, 0.23);
+  border: 0;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 20px 0;
+  color: #FFFF00;
+}
+
+ul.nav.nav-tabs li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+ul.nav.nav-tabs li a.active {
+  background-color: #FFFF00;
+  color: #000000;
+}
+
+button.green-button {
+  background-color: #FFFF00;
+  border: 1px solid  rgba(255, 255, 255, 0.5);
+  color: #000000;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+button.green-button:hover {
+  background-color: #FFFF00;
+  /*border: 1px solid rgba(255, 255, 255, 0.5);*/
+}
+
+.importKey {
+  padding-top: 20px;
+}
+
+.createWalletForm .green-button,
+.importWallet .green-button {
+  margin: 20px 0;
+}
+
+.importJson {
+  margin-top: 15px;
+}
+
+.importJson input#file {
+  margin-bottom: 15px;
+}
+
+
+/* Send And Vote Page */
+
+.sendTxBlock .flex, .confirmPage .flex {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sendTxBlock .flex, .confirmPage .flex p{
+ color: #ffff00;
+}
+
+
+.sendTxBlock .flex input.customInput, .sendTxBlock .senderAccount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 55px;
+  width: 70%;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.h3Headline .goToHomePage:hover {
+  cursor: pointer;
+}
+
+.senderAccount {
+  padding: 0 20px;
+  font-size: 16px;
+  border: 1px solid #d2d8dd;
+}
+
+/* Home Page */
+.accountActions {
+  margin-top: 10px;
+}
+
+.accountActions .mainActions {
+  float: left;
+}
+
+.accountActions .mainActions a {
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #ffff00;
+  border: 0.5px solid #edf0f4;
+  height: 26px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  background-position: 10% 50%;
+  padding: 0 8px 0 28px;
+  font-size: 12px;
+  color: #000;
+}
+
+.buyBR {
+  background: url(../img/icons/buy.png);
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  background-size: 18px;
+}
+
+.send {
+  background: url(../img/icons/send.png);
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  background-size: 18px;
+}
+
+.vote {
+  background: url(../img/icons/vote.png);
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  background-size: 18px;
+}
+
+.accountActions .controls {
+  float: right;
+  text-align: right;
+}
+
+.accountActions .controls a {
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2px;
+}
+
+.accountActions .controls a:hover {
+  background-color: #999;
+}
+
+.copyAddress {
+  background: url(../img/icons/copy.png);
+  background-size: 18px;
+}
+
+.openExplorer {
+  background: url(../img/icons/external.png);
+  background-size: 20px;
+}
+
+.showQR {
+  background: url(../img/icons/qr.png);
+  background-size: 20px;
+}
+
+/* Confirm page */
+.confirmPage .app-head span {
+  font-size: 20px;
+}
+.confirmPage .app-head div {
+  display: flex;
+  align-items: center;
+}
+
+.confirmPage .app-body {
+  height: 100%;
+}
+
+.confirmPage .app-footer {
+  border-top: 1px solid #ccc;
+}
+
+.confirmPage .flex {
+  align-items: center;
+}
+
+.confirmPage .flex div {
+  padding: 10px 20px;
+  font-size: 16px;
+  height: 45px;
+  border: 1px solid #d2d8dd;
+  border-radius: 4px;
+  width: 70%;
+}
+
+.confirmPage .modalPassword {
+  margin-top: 100px;
+}
+
+.confirmPage .modalPassword .buttons {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmPage .modalPassword .buttons button{
+  height: 50px;
+  width: 140px;
+}
+
+.confirmPage .modal-body {
+  margin-bottom: 10px;
+}
+select {
+
+}
+select.customSelect {
+  background-color: transparent;
+  padding: 0 20px;
+  width: 70%;
+  font-size: 16px;
+  height: 55px;
+  border: 1px solid #d2d8dd;
+  border-radius: 4px;
+  color: #ffff00;
+}
+
+
+/* Buy Page */
+.buyPage .app-body {
+  text-align: center;
+}
+.buyPage .buttons button {
+  height:55px;
+  width: 80%;
+}
+
+.buyPage .buyPlace {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* AccountDetails Page */
+.accountDetails {
+  text-align: center;
+}
+
+.accountDetails .app-body {
+  height: 100%;
+}
+
+.accountDetails .app-body p.accountName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.accountDetails #qrcode {
+  display: flex;
+  justify-content: center;
+}
+
+.accountDetails .hexAddress {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.accountDetails .app-footer {
+  border-top: 1px solid #ccc;
+}
+
+.accountDetails .buttons {
+  margin-top: 30px;
+
+}
+
+.accountDetails .buttons button{
+  margin-bottom: 10px;
+  width: 80%;
+  height: 50px;
+}
+
+a.back-link {
+  color: #c7c1c1;
+  text-decoration: underline;
+}
+a.back-link:hover{
+  cursor: pointer
+}
+.modal-footer buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+.popupPassword {
+  display: none;
+  height: 200px;
+  width: 300px;
+  background-color: #5d5d5d;
+}
+.fullbg{
+  background-color:gray;
+  left:0;
+  opacity:0.8;
+  position:absolute;
+  top:0;
+  z-index:3;
+  filter:alpha(opacity=80);
+  -moz-opacity:0.5;
+  -khtml-opacity:0.5;
+}

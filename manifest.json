@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "BoHrWeb",
+	"description": "BoHrWeb is an extension that allows users to securely interact with bohr-enabled web services and dApps from the browser.",
+	"version": "1.0.0",
+	"author": "BoHr Developers",
+	"icons": {
+		"128": "./img/128px.png"
+	},
+	"browser_action": {
+		"default_icon": "./img/19px.png",
+		"default_popup": "./views/home.html"
+	},
+
+	"permissions": [
+		"tabs",
+		"storage",
+		"activeTab"
+
+	],
+
+	"content_scripts": [{
+		"matches": ["http://*/*","https://*/*"],
+		"js": ["./libs/jquery.js"]
+	}]
+}

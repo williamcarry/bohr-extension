@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta http-equiv="refresh" content="4" > -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../libs/fontawesome.css">
+  <link rel="stylesheet" href='../css/index.css'>
+  <link rel="stylesheet" href="../libs/bootstrap.min.css">
+  <script src="../libs/popper.min.js"></script>
+  <script src="../libs/jquery.js"></script>
+  <script src="../libs/bootstrap.min.js"></script>
+  <script src="../libs/clipboard.min.js"></script>
+  <script src="../libs/bohr.js"></script>
+
+  <title>BoHrWeb</title>
+</head>
+<body>
+  <div class='main'>
+    <!-- ================= PUG Head =================== -->
+    <div class='app-header'>
+      <div class='logo goToHomePage'>
+        <strong>BoHrWeb</strong>
+      </div>
+      <div class='dropdown mainMenu'>
+        <div data-toggle='dropdown'><img class='verticalmenu' src='../img/icons/menu.png'/></div>
+        <div class ='dropdown-menu'>
+          <ul>
+            <li class='menu-item goToNewAccPage'>
+              <div>
+                <img src='../img/icons/add.png' width='20px'>Create new account
+              </div>
+            </li>
+            <li class='menu-item goToImportAccPage'>
+              <div >
+                <img src='../img/icons/import.png' width='20px'>Import Account
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================== -->
+    <div class='app-head'>
+      <!--div class='accountMenu'  data-toggle='tooltip' data-placement='bottom' title='Menu'>
+        <img src='../img/icons/menu.png' width='27px'>
+      </div-->
+      <div class='addressData card' style="width: 100%;">
+        <div class="card-body">
+          <select class="activeAddress form-control"></select>
+          <div class="accountActions">
+            <div class="mainActions">
+              <a href="#" class="send goToSendPage" data-toggle="tooltip" title="Send BR">Send</a>
+              <a href="#" class="vote goToVotePage" data-toggle="tooltip" title="Vote for delegate">Vote</a>
+            </div>
+            <div class="controls">
+              <a href="#" class="copyAddress" data-toggle="tooltip" title="Copy address"></a>
+              <a href="#" class="openExplorer" data-toggle="tooltip" title="Open explorer"></a>
+              <a href="#" class="showQR" data-toggle="tooltip" title="Show QR"></a>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <!--div class='dropdown accountOptions'>
+        <div data-toggle='dropdown'><img src='../img/icons/verticalmenu.png'></div>
+        <div class ='dropdown-menu'>
+          <ul>
+            <li class='menu-item goToAccountDetails'>
+              <div>
+                <img src='../img/icons/info.png' width='20px'>Account Details
+              </div>
+            </li>
+            <li class='menu-item goToBohrScan'>
+              <div>
+                <img src='../img/icons/circleArrow.png' width='20px'>View on Bohrscan
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div-->
+    </div>
+
+
+  </div>
+  <div class='app-body'>
+    <!-- number of BR, $ equivalent, send, vote, buy, history -->
+    <div class='bohrValue'>
+      <!--div class='circleBorder'>
+        <img id='circleLogo' src='../img/128px.png' width='45px' />
+      </div-->
+      <div>
+        <p class='bohrValue'>0 BR</p>
+        <div class='bohrLocked'>
+          <img src='../img/icons/locked.png' width='12px'>
+        </div>
+        <!--<p class='gray usdValue'>$0 USD</p>-->
+        <!--div class='buttons'>
+          <button class="btn goToBuyPage">Buy</button>
+          <button class="btn goToSendPage">Send</button>
+          <button class="btn goToVotePage">Vote</button>
+        </div-->
+      </div>
+    </div>
+  </div>
+  <div class="app-footer">
+    <!-- History with table -->
+    <div class='transactionList'>
+
+    </div>
+  </div>
+</div>
+<script src="../js/utils/sha256.js"></script>
+<script src="../js/utils/address.js"></script>
+<script src="../js/client.js"></script>
+<script src="../js/init.js"></script>
+<script src="../js/fillHomeData.js" type="module"></script>
+</body>
+</html>

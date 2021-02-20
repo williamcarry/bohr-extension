@@ -1,0 +1,40 @@
+{
+  "name": "BoHrWeb",
+  "version": "1.0.0",
+  "description": "BoHrWeb browser extension allows users to interact with bohr blockchain and dapps.",
+  "main": "background.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/standard",
+    "lint:fix": "./node_modules/.bin/standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BOHRweb/bohr-extension.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BOHRweb/bohr-extension/issues"
+  },
+  "homepage": "https://github.com/BOHRweb/bohr-extension#readme",
+  "standard": {
+    "ignore": [
+      "libs",
+      "js/bundle.js"
+    ]
+  },
+  "dependencies": {
+    "buffer": "^5.2.1",
+    "jquery": "^3.4.1",
+    "long": "^4.0.0",
+    "node-forge": "^0.8.4",
+    "bohr-js": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "standard": "^12.0.1"
+  }
+}
