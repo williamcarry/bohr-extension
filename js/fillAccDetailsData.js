@@ -16,8 +16,8 @@ async function fillAccDetailsData () {
       address: lastActive.address
     } })
   }
-  $('div.hexAddress span').text(addressEncode(lastActive.address))
-  $('div.hexAddress span').attr('data-address', addressEncode(lastActive.address))
+  $('div.hexAddress span').text(addressEncode2(lastActive.address))
+  $('div.hexAddress span').attr('data-address', lastActive.address)
   var qrcode = new QRCode('qrcode', {
     width: 180,
     height: 180,
@@ -25,7 +25,7 @@ async function fillAccDetailsData () {
     colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.H
   })
-  qrcode.makeCode(addressEncode(lastActive.address))
+  qrcode.makeCode(addressEncode2(lastActive.address))
 }
 
 fillAccDetailsData()

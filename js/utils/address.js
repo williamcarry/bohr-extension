@@ -542,14 +542,14 @@
         return str
     }
 
-    function addressEncode(path) {
+    function addressEncode2(path) {
         let address = splice0x(path)
         let ad = encodeAddress.do58EncodeAddress('0600' + address)
         console.log(ad)
         return ad;
     }
 
-    function addressDecode(path) {
+    function addressDecode2(path) {
         if (path && path.indexOf('B') == 0) {
             path = encodeAddress.do58DecodeAddress(path)
             path = path.replace('0600', '')

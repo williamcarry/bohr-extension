@@ -5,8 +5,9 @@ function fillConfirmData () {
   chrome.storage.local.get('txData', async (result) => {
     if (result.txData) {
       const txData = result.txData
-      $('div.confirmFrom').text(formatAddress(addressEncode(txData.fromAddress)))
-      $('div.confirmTo').text(formatAddress(addressEncode(txData.toAddress)))
+
+      $('div.confirmFrom').text(formatAddress(addressEncode2(txData.fromAddress)))
+      $('div.confirmTo').text(formatAddress(addressEncode2(txData.toAddress)))
       $('div.confirmFrom').attr('data-address', txData.fromAddress)
       $('div.confirmTo').attr('data-address', txData.toAddress)
       $('div.confirmAmount').text(txData.amount + ' BR')

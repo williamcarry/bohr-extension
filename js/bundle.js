@@ -160,7 +160,7 @@ $('button#passwordConfirm').on('click', function (e) {
     const accountAddress = $('div.confirmFrom').attr('data-address')
     var keys
     for (let i = 0; i < accounts.length; i++) {
-      if (accounts[i].address === accountAddress) {
+      if (accounts[i].address.toLowerCase() === accountAddress.toLowerCase()) {
         txObj.address = accounts[i].address
         // make it compatible with getKey func
         keys = getKey({
@@ -218,7 +218,11 @@ async function sendTx (txObj) {
 }
 
 async function getAddress (address) {
-  const response = await fetch(API + 'account?address=' + address)
+    let qaddress = address+"";
+    if(qaddress.indexOf("B") == 0){
+        qaddress = addressDecode2(qaddress);
+    }
+  const response = await fetch(API + 'account?address=' + qaddress)
   const { result } = await response.json()
   if (result) return result
   return result

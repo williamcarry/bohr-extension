@@ -31,16 +31,16 @@
         <!-- standart for all h3 header on any page -->
         <div class='tabs customTabs'>
           <ul class="nav nav-tabs" role="tablist">
-            <li  class="nav-item">
-              <a class="nav-link active"  data-toggle="tab" href="#create-tab" role="tab" aria-controls="create-tab" aria-selected="true">Create</a>
-            </li>
+<!--            <li  class="nav-item">-->
+<!--              <a class="nav-link active"  data-toggle="tab" href="#create-tab" role="tab" aria-controls="create-tab" aria-selected="true">Create</a>-->
+<!--            </li>-->
             <li  class="nav-item">
               <a class="nav-link"  data-toggle="tab" href="#import-tab" role="tab" aria-controls="import-tab" aria-selected="false">Import</a>
             </li>
           </ul>
           <div class="tab-content">
             <!-- crate new wallet -->
-            <div class="tab-pane fade show active" id="create-tab" role="tabpanel" aria-labelledby="create-tab">
+            <div class="tab-pane fade " id="create-tab" role="tabpanel" aria-labelledby="create-tab">
               <div class='createWalletForm'>
                 <!-- placholder based on number of wallets -->
                 <input class='customInput' id='accountName' type='text' placeholder="Account Name" />
@@ -72,7 +72,7 @@
 
 
             <!-- import wallet -->
-            <div class="tab-pane fade importWallet" id="import-tab" role="tabpanel" aria-labelledby="import-tab">
+            <div class="tab-pane fade importWallet show active" id="import-tab" role="tabpanel" aria-labelledby="import-tab">
               <select class='form-control selectImportType'>
                 <option value='privateKey'>Private Key</option>
               </select>

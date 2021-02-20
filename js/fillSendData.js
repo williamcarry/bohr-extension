@@ -10,7 +10,11 @@ var userAmount
 
 async function fillSenderData () {
   let activeAccount = await getLastActiveAccount()
-  const response = await fetch(API + 'account?address=' + activeAccount.address)
+  let qaddress = activeAccount.address+"";
+  if(qaddress.indexOf("B") == 0){
+    qaddress = addressDecode2(qaddress);
+  }
+  const response = await fetch(API + 'account?address=' + qaddress)
   const addressData = await response.json()
   const availableBal = formatAmount(addressData.result.available)
   userAmount = availableBal
@@ -18,7 +22,11 @@ async function fillSenderData () {
   const usdAmount = (price * availableBal).toFixed(2)
   // $('div.senderAccount p.senderName').text(activeAccount.name)
   $('div.senderAccount p.senderAmount').text((availableBal).toFixed(4) + ' BR')
-  $('div.senderAccount p.walletAddress').text( formatAddress2(addressEncode(activeAccount.address)) )
+  let showAddress = activeAccount.address+"";
+  if(showAddress.indexOf("0x") == 0){
+    showAddress = addressEncode2(showAddress)
+  }
+  $('div.senderAccount p.walletAddress').text( formatAddress2(showAddress) )
   $('div.senderAccount p.senderUsdValue').text( "" )
   if (!parseFloat(usdAmount)) {
     $('div.senderAccount p.senderUsdValue').hide()
@@ -65,7 +73,7 @@ $('input.amount').on('change', function (e) {
 
 $('button.goToApprovePage').on('click', function (e) {
   e.preventDefault()
-  const toAddress = addressDecode($('input.toAddress').val())
+  const toAddress = addressDecode2($('input.toAddress').val())
   // const toAddress = $('input.toAddress').val()
   const amount = $('input.amount').val()
   var type = $('h3.h3title').text()
@@ -93,7 +101,7 @@ $('button.goToApprovePage').on('click', function (e) {
     const accounts = await getAddressFromStorage()
 
     for (let i = 0; i < accounts.length; i++) {
-      if (accounts[i].address === activeAccount.address) {
+      if (accounts[i].address.toLowerCase() === activeAccount.address.toLowerCase()) {
         fromAddress = accounts[i].address
         privateKeySeleted = accounts[i].privateKey
       }

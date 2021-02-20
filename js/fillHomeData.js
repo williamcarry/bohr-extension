@@ -19,9 +19,13 @@ async function getAccountData () {
       address: lastActive.address
     } })
   }
-  const response = await fetch(API + 'account?address=' + lastActive.address)
+  let qaddress = lastActive.address+"";
+  if(qaddress.indexOf("B") == 0){
+    qaddress = addressDecode2(qaddress);
+  }
+  const response = await fetch(API + 'account?address=' + qaddress)
   const addressData = await response.json()
-  addressData.address = lastActive.address
+  addressData.address = qaddress
   addressData.name = lastActive.name
   return addressData
 }
@@ -47,13 +51,13 @@ async function fillAccount () {
   let accountsHtml = ''
   for (let account of accounts) {
     accountsHtml +=
-      `<option value="${addressEncode(account.address)}" data-name="${account.name}"` +
-      `${account.address === data.address ? 'selected' : ''}>` +
-      `${account.name} (${formatAddress(addressEncode(account.address))})</option>`
+      `<option value="${account.address}" data-name="${account.name}"` +
+      `${account.address.toLowerCase() === data.address.toLowerCase() ? 'selected' : ''}>` +
+      `${account.name} (${formatAddress(addressEncode2(account.address))})</option>`
   }
   $('div.addressData select.activeAddress').append(accountsHtml)
-  $('div.addressData p.hexAddress').text(addressEncode(formedAddress))
-  $('div.addressData p.hexAddress').attr('data-address', addressEncode(data.address))
+  $('div.addressData p.hexAddress').text(addressEncode2(formedAddress))
+  $('div.addressData p.hexAddress').attr('data-address', data.address)
   $('p.bohrValue').text(availableBal.toFixed(4) + ' BR')
   if (!parseFloat(usdAmount)) {
     $('p.usdValue').hide()
@@ -105,8 +109,8 @@ async function fillTxs (data, address) {
       `<div class='transactionExpandHeader'><p>Details:</p><p>` +
       `<img class="openExplorerHash" src ='../img/icons/share.png' width='22px' data-hash='${tx.hash}'/></p></div>` +
       `<div class='transactionExpandBody'>` +
-      `<div class='tranasctionRow'><p>From: </p><p>${addressEncode(tx.from)}</p></div>` +
-      `<div class='tranasctionRow'><p>To: </p><p>${addressEncode(tx.to)}</p></div>` +
+      `<div class='tranasctionRow'><p>From: </p><p>${addressEncode2(tx.from)}</p></div>` +
+      `<div class='tranasctionRow'><p>To: </p><p>${addressEncode2(tx.to)}</p></div>` +
       `<div class='tranasctionRow'><p>Amount: </p><p>${tx.value / Math.pow(10, 9)} BR </p></div>` +
       `<div class='tranasctionRow'><p>Fee: </p><p>${tx.fee / Math.pow(10, 9)} BR </p></div>` +
       `<div class='tranasctionRow'><p>Total: </p><p>${(tx.value / Math.pow(10, 9) + tx.fee / Math.pow(10, 9))} BR </p></div>` +

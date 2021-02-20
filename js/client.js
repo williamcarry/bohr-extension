@@ -41,7 +41,10 @@ $('a.copyAddress').on('click', function (e) {
 })
 
 $('a.openExplorer').on('click', function (e) {
-  const address = $('.activeAddress').val()
+  let address = $('.activeAddress').val()
+  if(address.indexOf("0x") == 0){
+    address = addressEncode2(address);
+  }
   chrome.tabs.create({ url: 'http://explorer.bohrweb.org/addressDetail.html?address=' + address })
 })
 
@@ -99,7 +102,10 @@ $('select.selectImportType').on('change', function (e) {
 })
 
 $('button.goToExplorer').on('click', function (e) {
-  const address = $('div.hexAddress span').text()
+  let address = $('div.hexAddress span').text()
+  if(address.indexOf("0x") == 0){
+    address = addressEncode2(address);
+  }
   chrome.tabs.create({ url: 'http://explorer.bohrweb.org/addressDetail.html?address=' + address })
 })
 

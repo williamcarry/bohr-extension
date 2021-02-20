@@ -11,7 +11,7 @@ async function fillValidators () {
     var html = ''
     const validators = json.result
     for (let i = 0; i < validators.length; i++) {
-      html += `<option data-address=${validators[i].address}>${formatAddress(addressEncode(validators[i].address))}  ${validators[i].name}</option>`
+      html += `<option data-address=${validators[i].address}>${formatAddress(addressEncode2(validators[i].address))}  ${validators[i].name}</option>`
     }
     $('select.validatorsList').html(html)
   }
